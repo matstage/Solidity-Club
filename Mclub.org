@@ -1,0 +1,64 @@
+#+TITLE: Mclub
+* The literal version of Mclub contract
+
+This document is written for me to understand Solidity programming. I have seen that I don't get it until I describe it myself. Hopefully other readers will tell me what I misunderstood!
+
+* The license
+
+For some compilers, the code must start with this comment to make sure you have the correct license. It is not standard for Solidity itself. This is a Linux Foundation standard.
+
+#+BEGIN_SRC solidity :tangle mbloc.sol
+//SPDX-License-Identfier: GPL-3.0-or-later
+#+END_SRC
+
+You can find the values available at: (https://spdx.org/licenses/)
+#+begin_src solidity :mbloc.sol
+
+#+end_src
+
+#+begin_src
+
+#+end_src
+
+#+begin_src
+
+#+end_src
+ 
+* The compiler
+
+While you are developing, you should set the compiler to a range, just like the below value. The string will show up in compiled bytecode metadata. Remember that you are putting the contract on a public chain, anyone can look at it afterwards.
+The pragma statement will choose the compiler version, meaning the compiler will issue an error if this does not match.
+
+#+begin_src solidity :tangle mbloc.sol
+pragma solidity >=0.8.7 <0.9.0;
+#+end_src
+
+Once you are ready to deploy to live networks, you should choose the specific compiler.
+* Imports
+
+You can import other contracts to you can reuse code.
+
+#+begin_src solidity :tangle mbloc.sol
+import "@zeppelin/contracts/token/ERC721/ERC721.sol"
+#+end_src
+
+* The contract
+
+Contract is the main component of anything on the Ethereum block chain. You put all your code inside it, you also use many other contracts to make your code.
+
+#+begin_src solidity :tangle mbloc.sol
+contract mclub {
+    event
+
+
+            }
+#+end_src
+
+
+** Events
+** Structs
+** Mappings
+** Modifiers
+** constructor
+** receive
+** functions
