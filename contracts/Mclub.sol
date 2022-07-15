@@ -3,7 +3,12 @@
 pragma solidity >=0.8.7 <0.9.0;
 
 contract  mclub() {
-    mapping(address => string) public memberName;
+    mapping(address => member) public ClubMembers;
+
+    function MemberRequest(string _nickname) storage payable notOwner {
+           // require(!msg.sender == owner, "Owner already member!");
+        ClubMembers[msg.sender] = { nickName: _nickname  };
+    }
 
 
     struct member {
@@ -13,10 +18,8 @@ contract  mclub() {
         enum State { requested, approved, active };
     }
 
-
-
     constructor () public {
-        owner = msg.sender; // Only owner can approve members.
+        owner = msg.sender; // Whoever Deploys becomes the owner.
     }
 
     modifier onlyOwner() {
@@ -29,20 +32,9 @@ contract  mclub() {
         _;
     }
 
-    modifier
+    function ApproveAmember(address _newMember) public onlyOwner {
+        ClubMembers[_newMember].State = approved;
 
-    function
-
-
-
-    function MemberRequest(string _nickname) payable notOwner {
-        require(!msg.sender == owner, "Owner already member!");
-        _;
-
-
-    }
-
-    function AddAmember() {
 
     }
 
