@@ -15,3 +15,5 @@ yarn-error.log*
 dist/
 .env
 coverage/
+package.json
+package-lock.json 
